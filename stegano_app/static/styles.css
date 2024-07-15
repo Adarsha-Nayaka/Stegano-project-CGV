@@ -1,0 +1,173 @@
+@-webkit-keyframes extend {
+    0% {
+        width: 150px;
+        height: 50px;
+        border-radius: 25px;
+    }
+    10% {
+        width: 160px;
+        height: 60px;
+        background: #fff;
+        margin-left: -5px;
+        margin-top: -5px;
+    }
+    20% {
+        width: 150px;
+        height: 50px;
+        background: #6fb07f;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    100% {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        margin-left: 45px;
+        background: #6fb07f;
+    }
+}
+
+@keyframes extend {
+    0% {
+        width: 150px;
+        height: 50px;
+        border-radius: 25px;
+    }
+    10% {
+        width: 160px;
+        height: 60px;
+        background: #fff;
+        margin-left: -5px;
+        margin-top: -5px;
+    }
+    20% {
+        width: 150px;
+        height: 50px;
+        background: #6fb07f;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    100% {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        margin-left: 45px;
+        background: #6fb07f;
+    }
+}
+
+@-webkit-keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        color: #fff;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        color: #fff;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+html {
+    background: #fff;
+}
+
+input, button, submit {
+    border: none;
+}
+
+.cont {
+    position: absolute;
+    width: 160px;
+    height: 10px;
+    left: 50%;
+    top: 60%;
+    margin: -25px 0 0 -80px;
+}
+
+button {
+    border-width: 1px;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background: #fff;
+    position: absolute;
+    border: 5px solid #6fb07f;
+}
+
+button > span {
+    font-size: 16px;
+    color: #fff;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+button:focus {
+    -webkit-animation: extend 2s ease-in-out;
+    -ms-animation: extend 2s ease-in-out;
+    animation: extend 2s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+button:focus > span {
+    -webkit-animation: disappear 2s ease-in-out;
+    -ms-animation: disappear 2s ease-in-out;
+    animation: disappear 2s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+button:focus > img {
+    -webkit-animation: appear 2s ease-in-out;
+    -ms-animation: appear 2s ease-in-out;
+    animation: appear 2s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
