@@ -1,10 +1,15 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Encryption - Image Steganography Project</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
     <link rel="icon" href="{% static 'images/logo.png' %}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
   <body>
     {% include "navbar.html" %}
@@ -36,10 +41,15 @@
             required
           ></textarea>
         </div>
+        </div>
         <div class="cont">
-          <button type="submit" class="btn btn-primary">
-            <span>Submit</span
-            ><img
+          <button
+            type="submit"
+            class="btn btn-primary"
+            onclick="handleEncryptionAndRequest()"
+          >
+            <span>Encrypt</span>
+            <img
               src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
               height="62"
               width="62"
@@ -48,10 +58,8 @@
         </div>
       </form>
     </div>
-
     {% if message %}
-    <p align="center">{{ message }}</p>
-
+    <p class="text-center">{{ message }}</p>
     {% endif %} {% if request.session.image_path %}
     <div class="text-center">
       <a href="{% url 'download' %}" class="btn btn-success"
