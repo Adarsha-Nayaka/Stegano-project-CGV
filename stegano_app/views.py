@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import FileResponse, HttpResponseNotFound
 import stepic
 from PIL import Image # importing the Image module from the PIL library.
 import io
@@ -16,6 +17,8 @@ def hide_text_in_image(image, text):
      The result is a bytes object in Python.'''
     return stepic.encode(image, data)
 #stepic.encode method is called to hide these bytes within the image
+
+
 
 def encryption_view(request):
     message = ''
@@ -40,11 +43,26 @@ def encryption_view(request):
 
         # save the new image in a project folder
         image_path = 'project_folder/encrypted_images/' + 'new_' + image_file.name
+        
+        # Store image_path in the session
+        request.session['image_path'] = image_path
+        
         new_image.save(image_path, format="PNG")
 
         message = 'Text has been encrypted in the image.'
 
     return render(request, 'encryption.html', {'message': message})
+
+def download_image(request):
+    # Ensure the file exists
+     # Retrieve the image_path from the session
+    image_path = request.session.get('image_path', '')
+    if(image_path):
+        response = FileResponse(open(image_path, 'rb'))
+        response['Content-Disposition'] = 'attachment; filename="encrypted_image.png"'
+        return response
+    else:
+        return HttpResponseNotFound('Image not found')
 
 def decryption_view(request):
     text = ''

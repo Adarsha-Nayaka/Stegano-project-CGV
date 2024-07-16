@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('encryption/', views.encryption_view, name='encryption'),
     path('decryption/', views.decryption_view, name='decryption'),
+    path('download/', views.download_image, name= 'download'),
 ]
