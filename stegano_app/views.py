@@ -42,7 +42,7 @@ def encryption_view(request):
         new_image = hide_text_in_image(image, text)
 
         # save the new image in a project folder
-        image_path = 'project_folder/encrypted_images/' + 'new_' + image_file.name
+        image_path = 'project_folder/encrypted_images/' + 'Encrp_' + image_file.name
         
         # Store image_path in the session
         request.session['image_path'] = image_path
