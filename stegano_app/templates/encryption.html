@@ -10,15 +10,55 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <style>
+      .cont {
+        margin-bottom: 20px;
+        margin-right: 50px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+      }
+      .btn img {
+        margin-left: 10px;
+      }
+      .download-container {
+        text-align: center;
+        margin-top: 100px;
+      }
+      .loading-screen {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        z-index: 1000;
+        text-align: center;
+        padding-top: 20%;
+      }
+    </style>
+    <script>
+      function showLoadingScreen() {
+        document.querySelector(".loading-screen").style.display = "block";
+        document.querySelector(".container").style.display = "none";
+      }
+    </script>
   </head>
   <body>
     {% include "navbar.html" %}
+    <div class="loading-screen">
+      <h2>Loading, please wait...</h2>
+    </div>
     <div class="container mt-5">
       <h1 class="text-center">Encrypt Your Image</h1>
       <form
         action="{% url 'encryption' %}"
         method="post"
         enctype="multipart/form-data"
+        onsubmit="showLoadingScreen()"
       >
         {% csrf_token %}
         <div class="form-group">
@@ -41,13 +81,8 @@
             required
           ></textarea>
         </div>
-        </div>
         <div class="cont">
-          <button
-            type="submit"
-            class="btn btn-primary"
-            onclick="handleEncryptionAndRequest()"
-          >
+          <button type="submit" class="btn btn-primary">
             <span>Encrypt</span>
             <img
               src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
@@ -61,7 +96,7 @@
     {% if message %}
     <p class="text-center">{{ message }}</p>
     {% endif %} {% if request.session.image_path %}
-    <div class="text-center">
+    <div class="download-container">
       <a href="{% url 'download' %}" class="btn btn-success"
         >Download Encrypted Image</a
       >
