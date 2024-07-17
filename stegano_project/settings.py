@@ -19,6 +19,7 @@ def get_local_ip():
         # doesn't have to be reachable
         s.connect(('10.254.254.254', 1))
         IP = s.getsockname()[0]
+        print("Public IP :____  http://"+IP+":8000  ____________________USE THIS TO ACCESS THE PUBLIC SITE")
     except Exception:
         IP = '127.0.0.1'
     finally:

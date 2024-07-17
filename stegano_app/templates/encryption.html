@@ -11,16 +11,19 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <style>
+      .main-section {
+        justify-content: center;
+        height: 90vh;
+        background: #fff;
+        color: white;
+      }
       .cont {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         margin-right: 50px;
       }
       .btn {
         display: inline-flex;
         align-items: center;
-      }
-      .btn img {
-        margin-left: 10px;
       }
       .download-container {
         text-align: center;
@@ -47,10 +50,17 @@
       }
     </script>
   </head>
-  <body>
+  <body class="main-section">
     {% include "navbar.html" %}
     <div class="loading-screen">
-      <h2>Loading, please wait...</h2>
+      <div class="loader">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+        <div class="bar6"></div>
+      </div>
     </div>
     <div class="container mt-5">
       <h1 class="text-center">Encrypt Your Image</h1>
@@ -84,11 +94,6 @@
         <div class="cont">
           <button type="submit" class="btn btn-primary">
             <span>Encrypt</span>
-            <img
-              src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
-              height="62"
-              width="62"
-            />
           </button>
         </div>
       </form>
@@ -97,9 +102,7 @@
     <p class="text-center">{{ message }}</p>
     {% endif %} {% if request.session.image_path %}
     <div class="download-container">
-      <a href="{% url 'download' %}" class="btn btn-success"
-        >Download Encrypted Image</a
-      >
+      <a href="{% url 'download' %}" class="btn btn-success">Download Image</a>
     </div>
     {% endif %}
   </body>

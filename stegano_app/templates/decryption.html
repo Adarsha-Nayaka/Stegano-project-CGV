@@ -10,8 +10,16 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <style>
+      .main-section {
+        justify-content: center;
+        height: 90vh;
+        background: #fff;
+        color: white;
+      }
+    </style>
   </head>
-  <body>
+  <body class="main-section">
     {% include "navbar.html" %}
     <div class="container mt-5">
       <h1 class="text-center">Decrypt Text from Image</h1>
@@ -34,11 +42,6 @@
         <div class="cont">
           <button type="submit" value="Decrypt" class="btn btn-primary">
             <span>Submit</span>
-            <img
-              src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
-              height="62"
-              width="62"
-            />
           </button>
         </div>
       </form>
