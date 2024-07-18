@@ -6,7 +6,18 @@ html, body {
   margin: 0;
   padding: 2vh;
 }
-
+* {
+  cursor: url('./images/cursor.png'), auto;
+}
+.btn{
+  cursor: url('./images/cursor.png'), auto;
+}
+.custom-cursor button, .custom-cursor a.btn {
+  cursor: url('./images/cursor.png'), auto;
+}
+.custom-cursor *{
+  cursor: url('./images/onclick.png'), auto;
+}
 .container {
   max-width: 800px; /* Limit container width for responsiveness */
   margin: 0 auto; /* Center container horizontally */
@@ -29,8 +40,8 @@ button {
   padding: 15px 30px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s;
+  cursor: url('./images/cursor.png'), auto;
 }
 
 button:hover {
