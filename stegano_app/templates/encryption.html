@@ -50,7 +50,6 @@
       }
     </script>
   </head>
-<<<<<<< HEAD
   <body>
     <div class="main-section">
       <script src="{% static 'script.js' %}"></script>
@@ -64,19 +63,6 @@
           <div class="bar5"></div>
           <div class="bar6"></div>
         </div>
-=======
-  <body class="main-section">
-    <script src="{% static 'script.js' %}"></script>
-    {% include "navbar.html" %}
-    <div class="loading-screen">
-      <div class="loader">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-        <div class="bar4"></div>
-        <div class="bar5"></div>
-        <div class="bar6"></div>
->>>>>>> 06fbdd33f11a64d280f23b604349ac0852053241
       </div>
       <div class="container mt-5">
         <h1 class="text-center">Encrypt Your Image</h1>
@@ -133,8 +119,7 @@
       </div>
       {% endif %}
     </div>
-<<<<<<< HEAD
-=======
+    <<<<<<< HEAD =======
     <div class="container mt-5">
       <h1 class="text-center">Encrypt Your Image</h1>
       <form
@@ -151,7 +136,7 @@
             class="form-control-file"
             id="image"
             name="image"
-            required 
+            required
           />
         </div>
         <div class="form-group">
@@ -177,7 +162,6 @@
     <div class="download-container">
       <a href="{% url 'download' %}" class="btn btn-success">Download Image</a>
     </div>
-    {% endif %}
->>>>>>> 06fbdd33f11a64d280f23b604349ac0852053241
+    {% endif %} >>>>>>> 06fbdd33f11a64d280f23b604349ac0852053241
   </body>
 </html>
