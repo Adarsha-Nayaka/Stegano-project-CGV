@@ -51,10 +51,14 @@
     {% include "navbar.html" %}
     <div class="main-section">
       <div>
-        <a href="encryption/" class="btn btn-danger btn-custom">Encrypt Now</a>
+        <a href="encryption/" class="btn btn-danger btn-custom" style="cursor: url('{% static 'images/cursor.png' %}'), auto;">
+          Encrypt Now
+        </a>
       </div>
       <div>
-        <a href="decryption/" class="btn btn-danger btn-custom">Decrypt Now</a>
+        <a href="decryption/" class="btn btn-danger btn-custom" style="cursor: url('{% static 'images/cursor.png' %}'), auto;">
+          Decrypt Now
+        </a>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
