@@ -1,7 +1,7 @@
 /* Global styles */
 html, body {
-  background-color: #222; /* Dark background */
-  color: #ddd; /* Light text color */
+  background-color: #7F675B; /* Dark background */
+  color: #F0EDEE; /* Light text color */
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 2vh;
@@ -15,11 +15,11 @@ html, body {
 
 /* Navigation bar styles (assuming Bootstrap is included) */
 .navbar-dark .navbar-nav .nav-link {
-  color: #ddd; /* Adjust link color for dark theme */
+  color: #F0EDEE; /* Adjust link color for dark theme */
 }
 
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff; /* Highlight active link */
+  color: #F0EDEE; /* Highlight active link */
 }
 
 /* Common button styles */

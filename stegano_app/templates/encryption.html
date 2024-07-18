@@ -14,8 +14,8 @@
       .main-section {
         justify-content: center;
         height: 90vh;
-        background: #fff;
-        color: white;
+        background: #f0edee;
+        color: black;
       }
       .cont {
         margin-bottom: 10px;
@@ -71,7 +71,7 @@
         onsubmit="showLoadingScreen()"
       >
         {% csrf_token %}
-        <div class="form-group" style="color: black;">
+        <div class="form-group" style="color: black">
           <label for="image">Select an Image:</label>
           <input
             type="file"
@@ -99,7 +99,7 @@
       </form>
     </div>
     {% if message %}
-    <p class="text-center" style="color: black;">{{ message }}</p>
+    <p class="text-center" style="color: black">{{ message }}</p>
     {% endif %} {% if request.session.image_path %}
     <div class="download-container">
       <a href="{% url 'download' %}" class="btn btn-success">Download Image</a>
