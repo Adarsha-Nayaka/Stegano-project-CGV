@@ -9,7 +9,7 @@ html, body {
 * {
   cursor: url('./images/cursor.png'), auto;
 }
-.btn{
+.main-section{
   cursor: url('./images/cursor.png'), auto;
 }
 .custom-cursor button, .custom-cursor a.btn {

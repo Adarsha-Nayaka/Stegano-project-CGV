@@ -19,40 +19,45 @@
       }
     </style>
   </head>
-  <body class="main-section">
-    <script src="{% static 'script.js' %}"></script>
-    {% include "navbar.html" %}
-    <div class="container mt-5">
-      <h1 class="text-center">Decrypt Text from Image</h1>
-      <form
-        class="mt-5"
-        action="{% url 'decryption' %}"
-        method="post"
-        enctype="multipart/form-data"
-      >
-        {% csrf_token %}
-        <div class="form-group" style="color: black">
-          <label for="image">Encrypted Image:</label>
-          <input
-            type="file"
-            name="image"
-            id="image"
-            class="form-control-file"
-            required
-          />
+  <body>
+    <div class="main-section">
+      <script src="{% static 'script.js' %}"></script>
+      {% include "navbar.html" %}
+      <div class="container mt-5">
+        <h1 class="text-center">Decrypt Text from Image</h1>
+        <form
+          class="mt-5"
+          action="{% url 'decryption' %}"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+          <div class="form-group" style="color: black">
+            <label for="image">Encrypted Image:</label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              class="form-control-file"
+              required
+            />
+          </div>
+          <div
+            class="cont"
+            style="cursor: url('{% static 'images/cursor.png' %}"
+          >
+            <button type="submit" value="Decrypt" class="btn btn-primary">
+              <span>Submit</span>
+            </button>
+          </div>
+        </form>
+        {% if text %}
+        <div class="alert alert-success mt-3">
+          <h4>Decrypted Text:</h4>
+          <p>{{ text }}</p>
         </div>
-        <div class="cont">
-          <button type="submit" value="Decrypt" class="btn btn-primary">
-            <span>Submit</span>
-          </button>
-        </div>
-      </form>
-      {% if text %}
-      <div class="alert alert-success mt-3">
-        <h4>Decrypted Text:</h4>
-        <p>{{ text }}</p>
+        {% endif %}
       </div>
-      {% endif %}
     </div>
   </body>
 </html>
